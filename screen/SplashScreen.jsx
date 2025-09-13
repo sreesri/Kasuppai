@@ -2,6 +2,7 @@ import { ActivityIndicator, StyleSheet, Text, View } from "react-native";
 import React, { useEffect, useState } from "react";
 import { Session } from "@supabase/supabase-js";
 import { useNavigation } from "@react-navigation/native";
+import { TAB_NAVIGATION_ROUTES } from "../utils/constants";
 
 const SplashScreen = ({ route }) => {
   const navigation = useNavigation();
@@ -10,8 +11,7 @@ const SplashScreen = ({ route }) => {
   useEffect(() => {
     setTimeout(() => {
       setAnimate(false);
-      console.log(route.session);
-      navigation.navigate("LoginScreen");
+      navigation.navigate(TAB_NAVIGATION_ROUTES);
     }, 5000);
   }, []);
 
